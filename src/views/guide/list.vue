@@ -1,0 +1,77 @@
+<template>
+  <ui-page title="리스트">
+    <div class="post-wrap">
+      <div
+        v-for="(item, i) in listData"
+        :key="i"
+        class="post"
+      >
+        <div class="post-header">
+          <div
+            class="profile"
+            :style="`background-image:url(${item.userImage})`"
+          />
+          <span class="profile-name">{{ item.name }}</span>
+        </div>
+        <slot />
+        <div
+          class="post-body"
+          :class="[item.filter]"
+          :style="`background-image:url(${item.postImage})`"
+        />
+        <div class="post-content">
+          <!-- <p>{{포스팅.likes}} Likes</p>  -->
+          <p>{{ item.likes }} Likes</p>
+          <p><strong>{{ item.name }}</strong> {{ item.caption }}</p>
+          <p class="date">
+            {{ item.date }}
+          </p>
+        </div>
+      </div>
+    </div>
+  </ui-page>
+</template>
+
+<script>
+import uiPage from '@/components/global/uiPage.vue'
+
+export default {
+  name: 'List',
+  components: {
+    uiPage,
+  },
+  data() {
+    return {
+      listData: [
+        {
+          name: 'Kimhyukmin',
+          userImage: 'https://placeimg.com/100/100/arch',
+          postImage: 'https://placeimg.com/640/480/arch',
+          likes: 36,
+          date: 'May 15',
+          liked: false,
+          caption: '오늘 무엇을 했냐면요 😫 아무것도 안했어요.',
+          filter: 'perpetua',
+        }, {
+          name: 'Dangdud',
+          userImage: 'https://placeimg.com/200/200/arch',
+          postImage: 'https://placeimg.com/640/480/people',
+          likes: 20,
+          date: 'Apr 20',
+          liked: false,
+          caption: 'Do you even lift, bro?',
+          filter: 'clarendon',
+        }, {
+          name: 'Mungmung',
+          userImage: 'https://placeimg.com/100/100/animals',
+          postImage: 'https://placeimg.com/640/480/animals',
+          likes: 49,
+          date: 'Apr 4',
+          liked: false,
+          caption: '고양이 멍뭉이',
+          filter: 'lofi',
+        }],
+    }
+  },
+}
+</script>
