@@ -27,24 +27,12 @@
     >
       <nav>
         <ul>
-          <li>
-            <router-link to="/hello">
-              helloWorld
-            </router-link>
-          </li>
-          <li>
-            <router-link to="/guide/index">
-              index
-            </router-link>
-          </li>
-          <li>
-            <router-link to="/guide/form">
-              form
-            </router-link>
-          </li>
-          <li>
-            <router-link to="/guide/list">
-              list
+          <li
+            v-for="(item,i) in $store.getters.menuInfo.menus"
+            :key="i"
+          >
+            <router-link :to="item.link">
+              {{ item.text }}
             </router-link>
           </li>
         </ul>
@@ -69,6 +57,9 @@ export default {
     return {
       gnbOpen: false,
     }
+  },
+  mounted() {
+    console.log(this.$store.getters.menuInfo.menus)
   },
   methods: {
     headBack() {
