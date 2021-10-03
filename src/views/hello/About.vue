@@ -38,7 +38,7 @@
 import addComma from '@/utils'
 
 export default {
-  name: 'Home',
+  name: 'HelloAbout',
   components: {
   },
   data() {

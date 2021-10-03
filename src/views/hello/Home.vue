@@ -22,7 +22,7 @@
 import HelloWorld from '@/components/page/HelloWorld.vue'
 
 export default {
-  name: 'Home',
+  name: 'HelloHome',
   components: {
     HelloWorld,
   },
