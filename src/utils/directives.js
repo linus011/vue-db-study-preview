@@ -5,8 +5,9 @@ export default {
     Vue.directive('click-outside', ClickOutSide)
 
     Vue.directive('addclass', {
-      inserted(el, binding, vnode, oldVnode) {
-        console.log('inserted', el, binding, vnode, oldVnode)
+      inserted(el, binding) {
+      // inserted(el, binding, vnode, oldVnode) {
+        // console.log('inserted', el, binding, vnode, oldVnode)
         setTimeout(() => {
           if (typeof binding.value === 'string') {
             el.classList.add(binding.value)

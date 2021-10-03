@@ -6,7 +6,6 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  padding: 70px 20px 20px;
   .nav{
     position: fixed;
     left: 0;
@@ -17,6 +16,8 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(3px);
     a{
       display: block;
       color: #000;
@@ -25,7 +26,13 @@
         font-weight: bold;
       }
     }
+    + div{
+      flex: 1 1 auto;
+      height: 100%;
+      padding: 70px 20px 20px;
+    }
   }
+  
   .logo_wrap{
     .logo{
       width: 200px;
