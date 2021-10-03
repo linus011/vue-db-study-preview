@@ -29,7 +29,6 @@
         </div>
       </div>
     </div> -->
-    <!-- <PostList :items="listData" /> -->
     <post-list
       :items="listData"
       @postClick="getPostLike"

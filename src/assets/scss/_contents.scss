@@ -57,6 +57,20 @@
     }
   }
 }
+  
+.home_box{
+  display: flex;
+  width: 150px;
+  height: 150px;
+  align-items: center;
+  justify-content: center;
+  background: #f1f1f1;
+  margin: 0 auto;
+  &.on{
+    background: red;
+    color: #fff;
+  }
+}
 
 .error_404{
   display:flex;
