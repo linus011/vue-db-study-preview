@@ -16,14 +16,31 @@
     </div>
     <div
       v-click-outside="boxOutsideClick"
-      v-focus="boxOutsideClick"
       class="home_box"
       :class="{on: isBoxOn}"
-      tabindex="0"
       @click="isBoxOn = true"
     >
       click-outside
     </div>
+    <br>
+    <div
+      v-addclass="'on'"
+      class="home_box"
+    >
+      addclass string
+    </div>
+    <br>
+    <div
+      v-addclass="boxFocus"
+      class="home_box"
+      :class="{on: isBoxFocus}"
+      tabindex="0"
+      @focus="isBoxFocus= true"
+      @blur="isBoxFocus= false"
+    >
+      addclass function
+    </div>
+    <br>
     <HelloWorld msg="Welcome to Your Vue.js App" />
   </div>
 </template>
@@ -41,6 +58,7 @@ export default {
     return {
       isBg: false,
       isBoxOn: false,
+      isBoxFocus: false,
     }
   },
   mounted() {
@@ -50,7 +68,12 @@ export default {
   },
   methods: {
     boxOutsideClick() {
+      console.log('boxOutsideClick')
       this.isBoxOn = false
+    },
+    boxFocus() {
+      console.log('boxFocus')
+      this.isBoxFocus = true
     },
   },
 }
