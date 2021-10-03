@@ -1,6 +1,7 @@
 <template>
   <ui-page title="리스트">
-    <div class="post-wrap">
+    <h1>SNS인척 리스트</h1>
+    <!-- <div class="post-wrap">
       <div
         v-for="(item, i) in listData"
         :key="i"
@@ -20,7 +21,6 @@
           :style="`background-image:url(${item.postImage})`"
         />
         <div class="post-content">
-          <!-- <p>{{포스팅.likes}} Likes</p>  -->
           <p>{{ item.likes }} Likes</p>
           <p><strong>{{ item.name }}</strong> {{ item.caption }}</p>
           <p class="date">
@@ -28,17 +28,24 @@
           </p>
         </div>
       </div>
-    </div>
+    </div> -->
+    <!-- <PostList :items="listData" /> -->
+    <post-list
+      :items="listData"
+      @postClick="getPostLike"
+    />
   </ui-page>
 </template>
 
 <script>
 import uiPage from '@/components/global/uiPage.vue'
+import PostList from '@/components/page/PostList.vue'
 
 export default {
   name: 'List',
   components: {
     uiPage,
+    PostList,
   },
   data() {
     return {
@@ -72,6 +79,11 @@ export default {
           filter: 'lofi',
         }],
     }
+  },
+  methods: {
+    getPostLike(e) {
+      console.log(this.listData[e].likes)
+    },
   },
 }
 </script>

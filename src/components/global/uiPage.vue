@@ -59,7 +59,7 @@ export default {
     }
   },
   mounted() {
-    console.log(this.$store.getters.menuInfo.menus)
+    // console.log(this.$store.getters.menuInfo.menus)
   },
   methods: {
     headBack() {
