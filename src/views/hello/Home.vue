@@ -41,6 +41,10 @@
       addclass function
     </div>
     <br>
+    addComma: {{ addCommaTxt(num) }}
+    <br>
+    removeComma: {{ removeCommaTxt(num2) }}
+    <br>
     <HelloWorld msg="Welcome to Your Vue.js App" />
   </div>
 </template>
@@ -59,21 +63,24 @@ export default {
       isBg: false,
       isBoxOn: false,
       isBoxFocus: false,
+      num: 123456,
+      num2: '987,654',
     }
   },
   mounted() {
-    // console.log(this.$store.getters.menuInfo.menus, this.gnbOpen)
-    console.log(addComma(1234))
-    console.log(this.$removeComma('3,456'))
   },
   methods: {
     boxOutsideClick() {
-      console.log('boxOutsideClick')
       this.isBoxOn = false
     },
     boxFocus() {
-      console.log('boxFocus')
       this.isBoxFocus = true
+    },
+    addCommaTxt(val) {
+      return addComma(val)
+    },
+    removeCommaTxt(val) {
+      return this.$removeComma(val)
     },
   },
 }
