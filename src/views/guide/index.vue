@@ -43,6 +43,28 @@
         </div>
       </div>
     </div>
+
+    <div class="btn-wrap">
+      <div class="flex">
+        <div>
+          <button
+            class="button line"
+            @click="loadingOpen"
+          >
+            로딩창(app.vue) 열기
+          </button>
+        </div>
+        <div>
+          <button
+            class="button line"
+            style="z-index: 501"
+            @click="loadingClose"
+          >
+            로딩창(app.vue) 닫기
+          </button>
+        </div>
+      </div>
+    </div>
     <h1>가나다라마바사</h1>
     <h1>가나다라마바사</h1>
     <h1>가나다라마바사</h1>
@@ -109,6 +131,7 @@
 <script>
 import uiPage from '@/components/global/uiPage.vue'
 import UiLoading from '@/components/global/uiLoading.vue'
+import eventBus from '@/components/eventBus.vue'
 
 export default {
   name: 'Index',
@@ -121,6 +144,14 @@ export default {
       isLoading: false,
       isLoading2: false,
     }
+  },
+  methods: {
+    loadingOpen() {
+      eventBus.$emit('loading-open')
+    },
+    loadingClose() {
+      eventBus.$emit('loading-close')
+    },
   },
 }
 </script>
