@@ -131,7 +131,6 @@
 <script>
 import uiPage from '@/components/global/uiPage.vue'
 import UiLoading from '@/components/global/uiLoading.vue'
-import eventBus from '@/components/eventBus.vue'
 
 export default {
   name: 'Index',
@@ -147,10 +146,10 @@ export default {
   },
   methods: {
     loadingOpen() {
-      eventBus.$emit('loading-open')
+      this.$loading()
     },
     loadingClose() {
-      eventBus.$emit('loading-close')
+      this.$loading(false)
     },
   },
 }
