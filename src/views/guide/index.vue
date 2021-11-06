@@ -65,6 +65,25 @@
         </div>
       </div>
     </div>
+    <ui-tabs v-model="tabVal">
+      <ui-tab>탭메뉴1</ui-tab>
+      <ui-tab>탭메뉴2</ui-tab>
+      <ui-tab>탭메뉴3</ui-tab>
+      <ui-tab>탭메뉴4</ui-tab>
+      <ui-tab>탭메뉴5</ui-tab>
+      <ui-tab>탭메뉴6</ui-tab>
+      <ui-tab>탭메뉴7</ui-tab>
+      <ui-tab>탭메뉴8</ui-tab>
+      <ui-tab>탭메뉴9</ui-tab>
+      <ui-tab>탭메뉴10</ui-tab>
+      <ui-tab>탭메뉴11</ui-tab>
+      <ui-tab>탭메뉴12</ui-tab>
+    </ui-tabs>
+    <input
+      id=""
+      v-model="tabVal"
+      type="text"
+    >
     <h1>가나다라마바사</h1>
     <h1>가나다라마바사</h1>
     <h1>가나다라마바사</h1>
@@ -131,17 +150,22 @@
 <script>
 import uiPage from '@/components/global/uiPage.vue'
 import UiLoading from '@/components/global/uiLoading.vue'
+import uiTabs from '@/components/global/uiTabs.vue'
+import uiTab from '@/components/global/uiTab'
 
 export default {
   name: 'Index',
   components: {
     uiPage,
     UiLoading,
+    uiTabs,
+    uiTab,
   },
   data() {
     return {
       isLoading: false,
       isLoading2: false,
+      tabVal: 3,
     }
   },
   methods: {
