@@ -159,7 +159,7 @@
 		&>.tab{
 			width:100%;position:relative;text-align:center;
 			&.disabled{opacity:0.3;}
-			&>a{position:relative;display:flex;align-items:center;justify-content:center;padding:0 12px;height:41px;text-align:center;font-size:16px;color:#666;}
+			&>a{position:relative;display:flex;align-items:center;justify-content:center;padding:0 10px;height:41px;text-align:center;font-size:16px;color:#666;}
 			&.active>a,
 			&>a.router-link-exact-active{
 				font-weight:bold;color:#333;
@@ -168,10 +168,9 @@
 	}
 	&.scrollable{
 		.tablist{
-      &>.tab:first-child{padding-left: 4px;}
-      &>.tab:last-child{padding-right: 4px;}
+      &>.tab:first-child{padding-left: 10px;}
+      &>.tab:last-child{padding-right: 10px;}
 		}
-		.tab_line i{padding:0 12px;}
 	}
 }
 .tab-blur{
@@ -180,10 +179,10 @@
   &.right{right:0;background-image:linear-gradient(to right,rgba(255,255,255,0),rgba(255,255,255,0.9) 66%);}
 }
 .tab-line{
-	position:absolute;left:0;bottom:0;pointer-events:none;height:1px;background:#222;border-radius:2px;z-index: 2;
+	position:absolute;left:0;bottom:0;pointer-events:none;height:2px;background:#222;border-radius:2px;z-index: 2;
 }
 .line-moving .tab-line{
-  transition:left 0.2s,width 0.2s;
+  transition:left 0.3s,width 0.3s;
 }
 
 .tab_panel{

@@ -111,6 +111,9 @@ export default {
     },
   },
   watch: {
+    value(newVal) {
+      if (newVal !== '') this.indexChk(newVal)
+    },
     index: {
       immediate: true,
       handler(newVal) {
@@ -128,7 +131,6 @@ export default {
   created() {
   },
   beforeMount() {
-    this.indexChk(this.value)
   },
   mounted() {
     this.readySet()
@@ -175,6 +177,8 @@ export default {
           this.childrens.push(obj)
         })
       }
+
+      this.indexChk(this.value)
     },
     selectTab(selectTab, event, idx) {
       event.preventDefault()
@@ -285,30 +289,27 @@ export default {
       }
     },
     indexChk(val) {
-      if (typeof val === 'string') {
+      if (typeof val === 'number' || (parseInt(val, 10) >= 0 && `${parseInt(val, 10)}`.length === val.length)) {
+        this.index = typeof val === 'number' ? val : parseInt(val, 10)
+      } else if (typeof val === 'string') {
         this.childrens.forEach((tab, i) => {
           if (tab.value !== null) {
-            if (tab.value === this.value) {
+            if (tab.value === val) {
               this.index = i
-              tab.active = true
-            } else {
-              tab.active = false
             }
-          }
-        })
-      } else if (typeof val === 'number') {
-        this.index = val
-        this.childrens.forEach((tab, i) => {
-          if (i === this.index) {
-            tab.active = true
-          } else {
-            tab.active = false
           }
         })
       }
     },
     watchEvt(val) {
       this.indexChk(val)
+      this.childrens.forEach((tab, i) => {
+        if (i === val) {
+          tab.active = true
+        } else {
+          tab.active = false
+        }
+      })
       setTimeout(() => {
         this.linePosition()
         const $active = this.$el.querySelector('.tab.active a')

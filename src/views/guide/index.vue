@@ -65,13 +65,14 @@
         </div>
       </div>
     </div>
+    <br>
     <ui-tabs v-model="tabVal">
       <ui-tab>탭메뉴1</ui-tab>
-      <ui-tab>탭메뉴2</ui-tab>
+      <ui-tab>탭메뉴2탭메뉴2</ui-tab>
       <ui-tab>탭메뉴3</ui-tab>
-      <ui-tab>탭메뉴4</ui-tab>
+      <ui-tab>탭메뉴4탭메뉴4</ui-tab>
       <ui-tab>탭메뉴5</ui-tab>
-      <ui-tab>탭메뉴6</ui-tab>
+      <ui-tab>탭메뉴6탭메뉴6</ui-tab>
       <ui-tab>탭메뉴7</ui-tab>
       <ui-tab>탭메뉴8</ui-tab>
       <ui-tab>탭메뉴9</ui-tab>
@@ -79,6 +80,8 @@
       <ui-tab>탭메뉴11</ui-tab>
       <ui-tab>탭메뉴12</ui-tab>
     </ui-tabs>
+    <br>
+    tabVal:
     <input
       id=""
       v-model="tabVal"
@@ -165,7 +168,7 @@ export default {
     return {
       isLoading: false,
       isLoading2: false,
-      tabVal: 3,
+      tabVal: 2,
     }
   },
   methods: {
