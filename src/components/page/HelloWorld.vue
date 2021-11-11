@@ -104,6 +104,7 @@
       </li>
     </ul>
     <h2>테스트화면</h2>
+    <p>나 텍스트다</p>
     <ul>
       <li>
         <router-link to="/guide/index">
